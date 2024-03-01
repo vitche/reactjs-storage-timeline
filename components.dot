@@ -1,0 +1,21 @@
+digraph Components {
+    rankdir=LR;
+
+    Widgets [shape=box]
+    UnconnectedWidget -> ConnectedWidget
+    ConnectedWidget -> StoreWidget
+    StoreWidget -> SchemaWidget
+    SchemaWidget -> TimelineWidget
+
+    Widgets -> Navigation
+    Navigation [shape=ellipse]
+
+    TimelineWidget -> Formats [label="value formats"]
+    Formats [shape=box];
+
+    TimelineWidget -> Plugins [label="chart plugins"]
+    Plugins [shape=box]
+
+    TimelineWidget -> Aggregations [label="aggregations"]
+    Aggregations [shape=box]
+}
